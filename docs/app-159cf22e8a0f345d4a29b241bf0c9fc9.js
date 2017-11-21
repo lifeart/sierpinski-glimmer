@@ -17,18 +17,18 @@ for(let s=0,i=t.length;s<i;s++){let i=t[s]
 if(i===pt)return pt
 i!==ct&&e.push(i)}return d(e)}function d(t){switch(t.length){case 0:return ct
 case 1:return t[0]
-case 2:return ft.create(t[0],t[1])
+case 2:return gt.create(t[0],t[1])
 default:return bt.create(t)}}function m(...t){let e=t[0],s=t[1],i=t[2]
-return"string"==typeof e?function(e,s,i){return g(e,s,i,t)}:i?g(e,s,i,[]):void function(t,e){let s,i=Symbol(e)
-f(t).trackedProperties[e]=!0,void 0!==t[e]&&(s=t[e])
-Object.defineProperty(t,e,{configurable:!0,get(){return this[i]},set(t){f(this).dirtyableTagFor(e).inner.dirty(),this[i]=t,Lt()}})}(e,s)}function g(t,e,s,i){let r=f(t)
-return r.trackedProperties[e]=!0,r.trackedPropertyDependencies[e]=i||[],{enumerable:!0,configurable:!1,get:s.get,set:function(){f(this).dirtyableTagFor(e).inner.dirty(),s.set.apply(this,arguments),Lt()}}}function f(t){let e=t[Ot]
-return e&&function(t,e){return Tt.call(t,e)}(t,Ot)?e:t[Ot]=new Nt(e)}function b(t,e,s=function(t,e){throw Dt.for(t,e)}){if("object"==typeof t&&t){return f(t).tagFor(e)}return ct}function y(t){return t[It]}function v(t,e){t[It]=e}function k(t){return function(e){return Array.isArray(e)&&e[0]===t}}function S(t,e,s){let i=t[1],r=t[2],n=t[3]
+return"string"==typeof e?function(e,s,i){return f(e,s,i,t)}:i?f(e,s,i,[]):void function(t,e){let s,i=Symbol(e)
+g(t).trackedProperties[e]=!0,void 0!==t[e]&&(s=t[e])
+Object.defineProperty(t,e,{configurable:!0,get(){return this[i]},set(t){g(this).dirtyableTagFor(e).inner.dirty(),this[i]=t,Dt()}})}(e,s)}function f(t,e,s,i){let r=g(t)
+return r.trackedProperties[e]=!0,r.trackedPropertyDependencies[e]=i||[],{enumerable:!0,configurable:!1,get:s.get,set:function(){g(this).dirtyableTagFor(e).inner.dirty(),s.set.apply(this,arguments),Dt()}}}function g(t){let e=t[Ot]
+return e&&function(t,e){return Tt.call(t,e)}(t,Ot)?e:t[Ot]=new Nt(e)}function b(t,e,s=function(t,e){throw Lt.for(t,e)}){if("object"==typeof t&&t){return g(t).tagFor(e)}return ct}function y(t){return t[It]}function v(t,e){t[It]=e}function k(t){return function(e){return Array.isArray(e)&&e[0]===t}}function S(t,e,s){let i=t[1],r=t[2],n=t[3]
 s.expr(r),n?s.dynamicAttr(i,n,e):s.dynamicAttr(i,null,e)}function w(t){return!(!t||!t[Ae])}function _(t,e,s){let i=t.lookupComponent(e,s)
-return i}function E(t){return x(t)?"":String(t)}function x(t){return null===t||void 0===t||"function"!=typeof t.toString}function C(t){return"object"==typeof t&&null!==t&&"function"==typeof t.toHTML}function A(t){return"object"==typeof t&&null!==t&&"number"==typeof t.nodeType}function N(t){return A(t)&&11===t.nodeType}function O(t){return"string"==typeof t}function T(t,e){return new We(t,e)}function L(t,e){let s=t.parentElement(),i=t.firstNode(),r=t.lastNode(),n=i
+return i}function E(t){return x(t)?"":String(t)}function x(t){return null===t||void 0===t||"function"!=typeof t.toString}function C(t){return"object"==typeof t&&null!==t&&"function"==typeof t.toHTML}function A(t){return"object"==typeof t&&null!==t&&"number"==typeof t.nodeType}function N(t){return A(t)&&11===t.nodeType}function O(t){return"string"==typeof t}function T(t,e){return new Xe(t,e)}function D(t,e){let s=t.parentElement(),i=t.firstNode(),r=t.lastNode(),n=i
 for(;n;){let t=n.nextSibling
 if(s.insertBefore(n,e),n===r)return t
-n=t}return null}function D(t){let e=t.parentElement(),s=t.firstNode(),i=t.lastNode(),r=s
+n=t}return null}function L(t){let e=t.parentElement(),s=t.firstNode(),i=t.lastNode(),r=s
 for(;r;){let t=r.nextSibling
 if(e.removeChild(r),r===i)return t
 r=t}return null}function B(t,e,s){if(!t)return e
@@ -41,7 +41,7 @@ var n=function(t,e,s){let i=t.firstChild,r=null,n=i
 for(;n;)r=n,n=n.nextSibling,e.insertBefore(r,s)
 return[i,r]}(e.firstChild,t,i)
 let a=n[0],l=n[1]
-return new Xe(t,a,l)}(t,i,r,e)}}}function R(t,e){return t&&function(t){let e=t.createElement("div")
+return new We(t,a,l)}(t,i,r,e)}}}function R(t,e){return t&&function(t){let e=t.createElement("div")
 if(e.innerHTML="first",e.insertAdjacentHTML("beforeend","second"),2===e.childNodes.length)return!1
 return!0}(t)?class extends e{constructor(t){super(t),this.uselessComment=t.createComment("")}insertHTMLBefore(t,e,s){if(null===s)return super.insertHTMLBefore(t,e,s)
 let i=!1,r=e?e.previousSibling:t.lastChild
@@ -61,11 +61,11 @@ return s&&s[e.toLowerCase()]||!1}(t.tagName,i)||(s="attr"),{normalized:i,type:s}
 if(t.namespaceURI===qe)return H(s,e)
 var i=z(t,e)
 let r=i.type,n=i.normalized
-return"attr"===r?H(s,n):function(t,e){if(I(t,e))return gs
+return"attr"===r?H(s,n):function(t,e){if(I(t,e))return fs
 if(function(t,e){return("INPUT"===t||"TEXTAREA"===t)&&"value"===e}(t,e))return bs
 if(function(t,e){return"OPTION"===t&&"selected"===e}(t,e))return ys
-return ms}(s,n)}function H(t,e){return I(t,e)?fs:ds}function U(t){return!1===t||void 0===t||null===t||void 0===t.toString?null:!0===t?"":"function"==typeof t?null:String(t)}function $(t,e,i){let r=t.block,n=t.referrer,a=r.hasEval,l=r.symbols,o=s({},e,{asPartial:i,referrer:n})
-return new ce(r.statements,t,o,{referrer:n,hasEval:a,symbols:l})}function G(){}function Y(t,e,s){return t|e<<16|s<<30}function X(t,e){return t|e<<30}function W(t,e){let s=t.getSelf(),i=e.capture(),r=i.positional.at(0).value()
+return ms}(s,n)}function H(t,e){return I(t,e)?gs:ds}function U(t){return!1===t||void 0===t||null===t||void 0===t.toString?null:!0===t?"":"function"==typeof t?null:String(t)}function $(t,e,i){let r=t.block,n=t.referrer,a=r.hasEval,l=r.symbols,o=s({},e,{asPartial:i,referrer:n})
+return new ce(r.statements,t,o,{referrer:n,hasEval:a,symbols:l})}function G(){}function Y(t,e,s){return t|e<<16|s<<30}function W(t,e){return t|e<<30}function X(t,e){let s=t.getSelf(),i=e.capture(),r=i.positional.at(0).value()
 return"function"!=typeof r&&function(t,e){let s=function(t){let e,s,i=""
 if(null===t||void 0===t)return i
 "parent"in t&&"property"in t?(e=t.parent.value(),s=t.property):"_parentValue"in t&&"_propertyKey"in t&&(e=t._parentValue,s=t._propertyKey)
@@ -109,12 +109,12 @@ ot.push(()=>dt),ht.push((t,e)=>e===dt)
 new ut(2,null)
 let dt=1
 class mt extends lt{static create(t=dt){return new ut(this.id,new mt(t))}constructor(t=dt){super(),this.revision=t}value(){return this.revision}dirty(){this.revision=++dt}}l(mt)
-class gt extends lt{constructor(){super(...arguments),this.lastChecked=null,this.lastValue=null}value(){let t=this.lastChecked,e=this.lastValue
-return t!==dt&&(this.lastChecked=dt,this.lastValue=e=this.compute()),this.lastValue}invalidate(){this.lastChecked=null}}class ft extends gt{static create(t,e){return new ut(this.id,new ft(t,e))}constructor(t,e){super(),this.first=t,this.second=e}compute(){return Math.max(this.first.value(),this.second.value())}}l(ft)
-class bt extends gt{static create(t){return new ut(this.id,new bt(t))}constructor(t){super(),this.tags=t}compute(){let t=this.tags,e=-1
+class ft extends lt{constructor(){super(...arguments),this.lastChecked=null,this.lastValue=null}value(){let t=this.lastChecked,e=this.lastValue
+return t!==dt&&(this.lastChecked=dt,this.lastValue=e=this.compute()),this.lastValue}invalidate(){this.lastChecked=null}}class gt extends ft{static create(t,e){return new ut(this.id,new gt(t,e))}constructor(t,e){super(),this.first=t,this.second=e}compute(){return Math.max(this.first.value(),this.second.value())}}l(gt)
+class bt extends ft{static create(t){return new ut(this.id,new bt(t))}constructor(t){super(),this.tags=t}compute(){let t=this.tags,e=-1
 for(let s=0;s<t.length;s++){let i=t[s].value()
 e=Math.max(i,e)}return e}}l(bt)
-class yt extends gt{static create(t){return new ut(this.id,new yt(t))}constructor(t){super(),this.tag=t,this.lastUpdated=1}compute(){return Math.max(this.lastUpdated,this.tag.value())}update(t){t!==this.tag&&(this.tag=t,this.lastUpdated=dt,this.invalidate())}}l(yt)
+class yt extends ft{static create(t){return new ut(this.id,new yt(t))}constructor(t){super(),this.tag=t,this.lastUpdated=1}compute(){return Math.max(this.lastUpdated,this.tag.value())}update(t){t!==this.tag&&(this.tag=t,this.lastUpdated=dt,this.invalidate())}}l(yt)
 class vt{constructor(){this.lastRevision=null,this.lastValue=null}value(){let t=this.tag,e=this.lastRevision,s=this.lastValue
 return null!==e&&t.validate(e)||(s=this.lastValue=this.compute(),this.lastRevision=t.value()),s}invalidate(){this.lastRevision=null}}class kt{constructor(t){this.lastValue=null,this.lastRevision=null,this.initialized=!1,this.tag=t.tag,this.reference=t}peek(){return this.initialized?this.lastValue:this.initialize()}revalidate(){if(!this.initialized)return this.initialize()
 let t=this.reference,e=this.lastRevision,s=t.tag
@@ -153,9 +153,9 @@ let s
 return(s=this.trackedPropertyDependencies[t])?this.tags[t]=function(t,e,s){let i=[t.dirtyableTagFor(e)]
 if(s&&s.length)for(let r=0;r<s.length;r++)i.push(t.tagFor(s[r]))
 return p(i)}(this,t,s):this.tags[t]=mt.create()}dirtyableTagFor(t){let e
-return this.trackedPropertyDependencies[t]?(e=this.computedPropertyTags[t])||(this.computedPropertyTags[t]=mt.create()):(e=this.tags[t])||(this.tags[t]=mt.create())}}let Ot=Symbol("ember-object"),Tt=Object.prototype.hasOwnProperty,Lt=function(){}
-class Dt extends Error{constructor(t,e,s){super(s),this.target=t,this.key=e}static for(t,e){return new Dt(t,e,`The property '${e}' on ${t} was changed after being rendered. If you want to change a property used in a template after the component has rendered, mark the property as a tracked property with the @tracked decorator.`)}}class Bt{constructor(t){this.debugName=null,this.__args__=null,Object.assign(this,t)}get element(){let t=this.bounds
-return e(t&&t.firstNode===t.lastNode,"The 'element' property can only be accessed on components that contain a single root element in their template. Try using 'bounds' instead to access the first and last nodes."),t.firstNode}get args(){return this.__args__}set args(t){this.__args__=t,f(this).dirtyableTagFor("args").inner.dirty()}static create(t){return new this(t)}didInsertElement(){}didUpdate(){}willDestroy(){}destroy(){this.willDestroy()}toString(){return`${this.debugName} component`}}const Rt={dynamicLayout:!1,dynamicTag:!0,prepareArgs:!1,createArgs:!0,attributeHook:!0,elementHook:!0}
+return this.trackedPropertyDependencies[t]?(e=this.computedPropertyTags[t])||(this.computedPropertyTags[t]=mt.create()):(e=this.tags[t])||(this.tags[t]=mt.create())}}let Ot=Symbol("ember-object"),Tt=Object.prototype.hasOwnProperty,Dt=function(){}
+class Lt extends Error{constructor(t,e,s){super(s),this.target=t,this.key=e}static for(t,e){return new Lt(t,e,`The property '${e}' on ${t} was changed after being rendered. If you want to change a property used in a template after the component has rendered, mark the property as a tracked property with the @tracked decorator.`)}}class Bt{constructor(t){this.debugName=null,this.__args__=null,Object.assign(this,t)}get element(){let t=this.bounds
+return e(t&&t.firstNode===t.lastNode,"The 'element' property can only be accessed on components that contain a single root element in their template. Try using 'bounds' instead to access the first and last nodes."),t.firstNode}get args(){return this.__args__}set args(t){this.__args__=t,g(this).dirtyableTagFor("args").inner.dirty()}static create(t){return new this(t)}didInsertElement(){}didUpdate(){}willDestroy(){}destroy(){this.willDestroy()}toString(){return`${this.debugName} component`}}const Rt={dynamicLayout:!1,dynamicTag:!0,prepareArgs:!1,createArgs:!0,attributeHook:!0,elementHook:!0}
 class Ft{constructor(t,e,s,i){this.name=t,this.manager=e,this.ComponentClass=s,this.layout=i,this.state={name:t,capabilities:Rt,ComponentClass:s,layout:i}}toJSON(){return{GlimmerDebug:`<component-definition name="${this.name}">`}}}class Mt{constructor(t,e=null){this._registry=t,this._resolver=e,this._lookups={},this._factoryDefinitionLookups={}}factoryFor(t){let e=this._factoryDefinitionLookups[t]
 if(e||(this._resolver&&(e=this._resolver.retrieve(t)),e||(e=this._registry.registration(t)),e&&(this._factoryDefinitionLookups[t]=e)),e)return this.buildFactory(t,e)}lookup(t){let e=!1!==this._registry.registeredOption(t,"singleton")
 if(e&&this._lookups[t])return this._lookups[t]
@@ -178,8 +178,8 @@ void 0===i&&(this._registeredInjections[t]=i=[]),i.push({property:e,source:s})}r
 return Array.prototype.push.apply(s,this._registeredInjections[e]),Array.prototype.push.apply(s,this._registeredInjections[t]),s}}const It="__owner__"
 class jt{constructor(t){this._bounds=t}get firstNode(){return this._bounds.firstNode()}get lastNode(){return this._bounds.lastNode()}}class zt{constructor(){this.evaluateOpcode=i(78).slice()}add(t,e){this.evaluateOpcode[t]=e}evaluate(t,e,s){(0,this.evaluateOpcode[s])(t,e)}}const Vt=new zt
 class Ht{constructor(){r(this)}}class Ut extends Ht{constructor(){super(...arguments),this.next=null,this.prev=null}}var $t;(function(t){t[t.pc=0]="pc",t[t.ra=1]="ra",t[t.fp=2]="fp",t[t.sp=3]="sp",t[t.s0=4]="s0",t[t.s1=5]="s1",t[t.t0=6]="t0",t[t.t1=7]="t1",t[t.v0=8]="v0"})($t||($t={}))
-class Gt extends wt{constructor(t){super(t)}static create(t){return void 0===t?Wt:null===t?Kt:!0===t?qt:!1===t?Jt:"number"==typeof t?new Xt(t):new Yt(t)}get(t){return Wt}}class Yt extends Gt{constructor(){super(...arguments),this.lengthReference=null}get(t){if("length"===t){let t=this.lengthReference
-return null===t&&(t=this.lengthReference=new Xt(this.inner.length)),t}return super.get(t)}}class Xt extends Gt{constructor(t){super(t)}}const Wt=new Xt(void 0),Kt=new Xt(null),qt=new Xt(!0),Jt=new Xt(!1)
+class Gt extends wt{constructor(t){super(t)}static create(t){return void 0===t?Xt:null===t?Kt:!0===t?qt:!1===t?Jt:"number"==typeof t?new Wt(t):new Yt(t)}get(t){return Xt}}class Yt extends Gt{constructor(){super(...arguments),this.lengthReference=null}get(t){if("length"===t){let t=this.lengthReference
+return null===t&&(t=this.lengthReference=new Wt(this.inner.length)),t}return super.get(t)}}class Wt extends Gt{constructor(t){super(t)}}const Xt=new Wt(void 0),Kt=new Wt(null),qt=new Wt(!0),Jt=new Wt(!1)
 class Qt{constructor(t){this.inner=t,this.tag=t.tag}value(){return this.toBool(this.inner.value())}toBool(t){return!!t}}class Zt extends vt{constructor(t){super(),this.parts=t,this.tag=u(t)}compute(){let t=new Array
 for(let e=0;e<this.parts.length;e++){let s=this.parts[e].value()
 null!==s&&void 0!==s&&(t[e]=function(t){return"function"!=typeof t.toString?"":String(t)}(s))}return t.length>0?t.join(""):null}}Vt.add(1,(t,{op1:e})=>{let s=t.stack,i=t.constants.resolveHandle(e)(t,s.pop())
@@ -254,7 +254,7 @@ this.buffer.push(t)}),this.size=this.buffer.length}compact(t){return String.from
 this.buffer[t+1]=e}}class me{constructor(){this.labels=a(),this.targets=[]}label(t,e){this.labels[t]=e}target(t,e,s){this.targets.push({at:t,Target:e,target:s})}patch(t){let e=this.targets,s=this.labels
 for(let r=0;r<e.length;r++){var i=e[r]
 let n=i.at,a=s[i.target]-n
-t.patch(n,a)}}}class ge{constructor(t,e,s,i,r,n){this.program=t,this.lookup=e,this.referrer=s,this.macros=i,this.containingLayout=r,this.asPartial=n,this.encoder=new de([]),this.labelsStack=new st,this.isComponentAttrs=!1,this.component=new pe(this),this.constants=t.constants,this.expressionCompiler=function(){if(le)return le
+t.patch(n,a)}}}class fe{constructor(t,e,s,i,r,n){this.program=t,this.lookup=e,this.referrer=s,this.macros=i,this.containingLayout=r,this.asPartial=n,this.encoder=new de([]),this.labelsStack=new st,this.isComponentAttrs=!1,this.component=new pe(this),this.constants=t.constants,this.expressionCompiler=function(){if(le)return le
 const t=le=new ne
 return t.add(re.Unknown,(t,e)=>{let s=e.lookup,i=e.asPartial,r=e.referrer,n=t[1],a=s.lookupHelper(n,r)
 null!==a?e.helper(a,null,null):i?e.resolveMaybeLocal(n):(e.getVariable(0),e.getProperty(n))}),t.add(re.Concat,(t,e)=>{let s=t[1]
@@ -330,7 +330,7 @@ for(let t=c.length-1;t>=0;t--){var p=c[t]
 let e=p.symbol
 p.isBlock?this.setBlock(e):this.setVariable(e)}this.pushFrame(),this.invokeStatic(s),this.didRenderLayout($t.s0),this.popFrame(),this.popScope(),this.popDynamicScope(),this.commitComponentTransaction(),this.load($t.s0)}dynamicComponent(t,e,s,i,r,n=null){this.startLabels(),this.pushFrame(),this.returnTo("END"),this.expr(t),this.dup(),this.enter(2),this.jumpUnless("ELSE"),this.pushDynamicComponentManager(this.referrer),this.invokeComponent(null,e,s,i,r,n),this.label("ELSE"),this.exit(),this.return(),this.label("END"),this.popFrame(),this.stopLabels()}isComponent(){this.push(57)}curryComponent(t,e,s,i){let r=this.referrer
 this.pushFrame(),this.compileArgs(e,s,null,i),this.expr(t),this.push(58,this.constants.serializable(r)),this.popFrame(),this.fetch($t.v0)}pushSymbolTable(t){if(t){let e=this.constants.table(t)
-this.push(41,e)}else this.primitive(null)}pushBlockScope(){this.push(40)}pushYieldableBlock(t){this.pushSymbolTable(t&&t.symbolTable),this.pushBlockScope(),this.pushBlock(t)}template(t){return t?this.inlineBlock(t):null}}class fe extends ge{pushBlock(t){t?this.pushOther(t):this.primitive(null)}resolveBlock(){this.push(39)}pushLayout(t){t?this.pushOther(t):this.primitive(null)}resolveLayout(){this.push(39)}invokeStatic(t){this.pushOther(t),this.push(39),this.push(42)}pushOther(t){this.push(10,this.other(t))}other(t){return this.constants.other(t)}}class be{constructor(){this.stack=null,this.positional=new ye,this.named=new ke,this.blocks=new we}setup(t,e,s,i,r){this.stack=t
+this.push(41,e)}else this.primitive(null)}pushBlockScope(){this.push(40)}pushYieldableBlock(t){this.pushSymbolTable(t&&t.symbolTable),this.pushBlockScope(),this.pushBlock(t)}template(t){return t?this.inlineBlock(t):null}}class ge extends fe{pushBlock(t){t?this.pushOther(t):this.primitive(null)}resolveBlock(){this.push(39)}pushLayout(t){t?this.pushOther(t):this.primitive(null)}resolveLayout(){this.push(39)}invokeStatic(t){this.pushOther(t),this.push(39),this.push(42)}pushOther(t){this.push(10,this.other(t))}other(t){return this.constants.other(t)}}class be{constructor(){this.stack=null,this.positional=new ye,this.named=new ke,this.blocks=new we}setup(t,e,s,i,r){this.stack=t
 let n=this.named,a=e.length,l=t.sp-a+1
 n.setup(t,l,a,e,r)
 let o=l-i
@@ -342,7 +342,7 @@ e.base+=t,s.base+=t,i.sp+=t}}capture(){let t=0===this.positional.length?xe:this.
 return{tag:this.tag,length:this.length,positional:t,named:e}}clear(){let t=this.stack,e=this.length
 t.pop(e)}}class ye{constructor(){this.base=0,this.length=0,this.stack=null,this._tag=null,this._references=null}setup(t,e,s){this.stack=t,this.base=e,this.length=s,0===s?(this._tag=ct,this._references=at):(this._tag=null,this._references=null)}get tag(){let t=this._tag
 return t||(t=this._tag=u(this.references)),t}at(t){let e=this.base,s=this.length,i=this.stack
-return t<0||t>=s?Wt:i.get(t,e)}capture(){return new ve(this.tag,this.references)}prepend(t){let e=t.length
+return t<0||t>=s?Xt:i.get(t,e)}capture(){return new ve(this.tag,this.references)}prepend(t){let e=t.length
 if(e>0){let s=this.base,i=this.length,r=this.stack
 this.base=s-=e,this.length=i+e
 for(let n=0;n<e;n++)r.set(t.at(n),n,s)
@@ -351,10 +351,10 @@ if(!t){let e=this.stack,s=this.base,i=this.length
 t=this._references=e.slice(s,s+i)}return t}}class ve{constructor(t,e,s=e.length){this.tag=t,this.references=e,this.length=s}static empty(){return new ve(ct,at,0)}at(t){return this.references[t]}value(){return this.references.map(this.valueOf)}get(t){let e=this.references,s=this.length
 if("length"===t)return Gt.create(s)
 {let i=parseInt(t,10)
-return i<0||i>=s?Wt:e[i]}}valueOf(t){return t.value()}}class ke{constructor(){this.base=0,this.length=0,this._tag=null,this._references=null,this._names=at,this._atNames=at}setup(t,e,s,i,r){this.stack=t,this.base=e,this.length=s,0===s?(this._tag=ct,this._references=at,this._names=at,this._atNames=at):(this._tag=null,this._references=null,r?(this._names=i,this._atNames=null):(this._names=null,this._atNames=i))}get tag(){return u(this.references)}get names(){let t=this._names
+return i<0||i>=s?Xt:e[i]}}valueOf(t){return t.value()}}class ke{constructor(){this.base=0,this.length=0,this._tag=null,this._references=null,this._names=at,this._atNames=at}setup(t,e,s,i,r){this.stack=t,this.base=e,this.length=s,0===s?(this._tag=ct,this._references=at,this._names=at,this._atNames=at):(this._tag=null,this._references=null,r?(this._names=i,this._atNames=null):(this._names=null,this._atNames=i))}get tag(){return u(this.references)}get names(){let t=this._names
 return t||(t=this._names=this._atNames.map(this.toSyntheticName)),t}get atNames(){let t=this._atNames
 return t||(t=this._atNames=this._names.map(this.toAtName)),t}has(t){return-1!==this.names.indexOf(t)}get(t,e=!0){let s=this.base,i=this.stack,r=(e?this.names:this.atNames).indexOf(t)
-return-1===r?Wt:i.get(r,s)}capture(){return new Se(this.tag,this.names,this.references)}merge(t){let e=t.length
+return-1===r?Xt:i.get(r,s)}capture(){return new Se(this.tag,this.names,this.references)}merge(t){let e=t.length
 if(e>0){let s=this.names,i=this.length,r=this.stack,n=t.names
 Object.isFrozen(s)&&0===s.length&&(s=[])
 for(let a=0;a<e;a++){let e=n[a];-1===s.indexOf(e)&&(i=s.push(e),r.push(t.references[a]))}this.length=i,this._tag=null,this._references=null,this._names=s,this._atNames=null}}get references(){let t=this._references
@@ -363,7 +363,7 @@ t=this._references=i.slice(e,e+s)}return t}toSyntheticName(t){return t.slice(1)}
 if(!t){let e=this.names,s=this.references
 t=this._map=a()
 for(let i=0;i<e.length;i++){t[e[i]]=s[i]}}return t}has(t){return-1!==this.names.indexOf(t)}get(t){let e=this.names,s=this.references,i=e.indexOf(t)
-return-1===i?Wt:s[i]}value(){let t=this.names,e=this.references,s=a()
+return-1===i?Xt:s[i]}value(){let t=this.names,e=this.references,s=a()
 for(let i=0;i<t.length;i++){s[t[i]]=e[i].value()}return s}}class we{constructor(){this.internalValues=null,this.internalTag=null,this.names=at,this.length=0,this.base=0}setup(t,e,s,i){this.stack=t,this.names=i,this.base=e,this.length=s,0===s?(this.internalTag=ct,this.internalValues=at):(this.internalTag=null,this.internalValues=null)}get values(){let t=this.internalValues
 if(!t){let e=this.base,s=this.length,i=this.stack
 t=this.internalValues=i.slice(e,e+3*s)}return t}has(t){return-1!==this.names.indexOf(t)}get(t){let e=this.base,s=this.stack,i=this.names,r=i.indexOf(t)
@@ -406,20 +406,20 @@ if(e>0){a=a.child()
 for(let s=0;s<e;s++)a.bindSymbol(t[s],n.at(s))}}t.pushFrame(),t.pushScope(a),t.call(s)}),Vt.add(45,(t,{op1:e})=>{t.goto(e)}),Vt.add(46,(t,{op1:e})=>{let s=t.stack.pop()
 if(o(s))s.value()&&t.goto(e)
 else{let i=new kt(s)
-i.peek()&&t.goto(e),t.updateWith(new Le(i))}}),Vt.add(47,(t,{op1:e})=>{let s=t.stack.pop()
+i.peek()&&t.goto(e),t.updateWith(new De(i))}}),Vt.add(47,(t,{op1:e})=>{let s=t.stack.pop()
 if(o(s))s.value()||t.goto(e)
 else{let i=new kt(s)
-i.peek()||t.goto(e),t.updateWith(new Le(i))}}),Vt.add(20,t=>{t.return()}),Vt.add(21,(t,{op1:e})=>{t.returnTo(e)}),Vt.add(52,t=>{let e=t.env,s=t.stack
+i.peek()||t.goto(e),t.updateWith(new De(i))}}),Vt.add(20,t=>{t.return()}),Vt.add(21,(t,{op1:e})=>{t.returnTo(e)}),Vt.add(52,t=>{let e=t.env,s=t.stack
 s.push(e.toConditionalReference(s.pop()))})
-class Le extends Ut{constructor(t){super(),this.type="assert",this.tag=t.tag,this.cache=t}evaluate(t){(function(t){return t!==St})(this.cache.revalidate())&&t.throw()}}class De extends Ut{constructor(t,e){super(),this.target=e,this.type="jump-if-not-modified",this.tag=t,this.lastRevision=t.value()}evaluate(t){let e=this.tag,s=this.target,i=this.lastRevision
+class De extends Ut{constructor(t){super(),this.type="assert",this.tag=t.tag,this.cache=t}evaluate(t){(function(t){return t!==St})(this.cache.revalidate())&&t.throw()}}class Le extends Ut{constructor(t,e){super(),this.target=e,this.type="jump-if-not-modified",this.tag=t,this.lastRevision=t.value()}evaluate(t){let e=this.tag,s=this.target,i=this.lastRevision
 !t.alwaysRevalidate&&e.validate(i)&&t.goto(s)}didModify(){this.lastRevision=this.tag.value()}}class Be extends Ut{constructor(t){super(),this.target=t,this.type="did-modify",this.tag=ct}evaluate(){this.target.didModify()}}class Re{constructor(t){this.tag=ct,this.type="label",this.label=null,this.prev=null,this.next=null,r(this),this.label=t}evaluate(){}inspect(){return`${this.label} [${this._guid}]`}}Vt.add(22,(t,{op1:e})=>{t.elements().appendText(t.constants.getString(e))}),Vt.add(26,(t,{op1:e})=>{let s=t.constants.getString(e)
 t.elements().openElement(s)}),Vt.add(23,(t,{op1:e})=>{t.elements().appendComment(t.constants.getString(e))}),Vt.add(25,(t,{op1:e})=>{t.elements().openElement(t.constants.getString(e))}),Vt.add(27,t=>{let e=t.stack.pop().value()
 t.elements().openElement(e)}),Vt.add(34,t=>{let e,s,i=t.stack.pop(),r=t.stack.pop(),n=t.stack.pop().value()
 if(o(i))e=i.value()
 else{let s=new kt(i)
-e=s.peek(),t.updateWith(new Le(s))}if(o(r))s=r.value()
+e=s.peek(),t.updateWith(new De(s))}if(o(r))s=r.value()
 else{let e=new kt(r)
-s=e.peek(),t.updateWith(new Le(e))}t.elements().pushRemoteElement(e,n,s)}),Vt.add(35,t=>{t.elements().popRemoteElement()}),Vt.add(31,t=>{let e=t.fetchValue($t.t0)
+s=e.peek(),t.updateWith(new De(e))}t.elements().pushRemoteElement(e,n,s)}),Vt.add(35,t=>{t.elements().popRemoteElement()}),Vt.add(31,t=>{let e=t.fetchValue($t.t0)
 e&&(e.flush(t),t.loadValue($t.t0,null)),t.elements().flushElement()}),Vt.add(32,t=>{t.elements().closeElement()}),Vt.add(33,(t,{op1:e})=>{let s=t.constants.resolveHandle(e),i=t.stack.pop()
 var r=t.elements()
 let n=r.constructing,a=r.updateOperations,l=t.dynamicScope(),o=s.create(n,i,l,a)
@@ -437,7 +437,7 @@ i.validate(this.lastRevision)||(this.lastRevision=i.value(),e.update(s.value(),t
 if(s===e)return this.lastDefinition
 let i=null
 if(w(s))i=s
-else if("string"==typeof s&&s){i=_(this.resolver,s,this.meta)}return i=this.curry(i),this.lastValue=s,this.lastDefinition=i,i}get(){return Wt}curry(t){let e=this.args
+else if("string"==typeof s&&s){i=_(this.resolver,s,this.meta)}return i=this.curry(i),this.lastValue=s,this.lastDefinition=i,i}get(){return Xt}curry(t){let e=this.args
 return!e&&w(t)?t:t?new Ne(t,e):null}}class Ie{constructor(t){this.list=t,this.tag=u(t),this.list=t}value(){let t=[],e=this.list
 for(let s=0;s<e.length;s++){let i=E(e[s].value())
 i&&t.push(i)}return 0===t.length?null:t.join(" ")}}const je=new be
@@ -519,15 +519,15 @@ class Ge{constructor(t){this.tag=t.tag,this.artifacts=t}value(){return!this.arti
 e.push(n),e.push(new Ge(n.artifacts))}),Vt.add(53,(t,{op1:e})=>{t.enterList(e)}),Vt.add(54,t=>{t.exitList()}),Vt.add(56,(t,{op1:e})=>{let s=t.stack.peek().next()
 if(s){let e=t.iterate(s.memo,s.value)
 t.enterItem(s.key,e)}else t.goto(e)})
-class Ye{constructor(t,e){this.element=t,this.nextSibling=e}}class Xe{constructor(t,e,s){this.parentNode=t,this.first=e,this.last=s}parentElement(){return this.parentNode}firstNode(){return this.first}lastNode(){return this.last}}class We{constructor(t,e){this.parentNode=t,this.node=e}parentElement(){return this.parentNode}firstNode(){return this.node}lastNode(){return this.node}}const Ke="http://www.w3.org/2000/svg",qe="http://www.w3.org/2000/svg",Je={foreignObject:1,desc:1,title:1},Qe=Object.create(null);["b","big","blockquote","body","br","center","code","dd","div","dl","dt","em","embed","h1","h2","h3","h4","h5","h6","head","hr","i","img","li","listing","main","meta","nobr","ol","p","pre","ruby","s","small","span","strong","strike","sub","sup","table","tt","u","ul","var"].forEach(t=>Qe[t]=1)
+class Ye{constructor(t,e){this.element=t,this.nextSibling=e}}class We{constructor(t,e,s){this.parentNode=t,this.first=e,this.last=s}parentElement(){return this.parentNode}firstNode(){return this.first}lastNode(){return this.last}}class Xe{constructor(t,e){this.parentNode=t,this.node=e}parentElement(){return this.parentNode}firstNode(){return this.node}lastNode(){return this.node}}const Ke="http://www.w3.org/2000/svg",qe="http://www.w3.org/2000/svg",Je={foreignObject:1,desc:1,title:1},Qe=Object.create(null);["b","big","blockquote","body","br","center","code","dd","div","dl","dt","em","embed","h1","h2","h3","h4","h5","h6","head","hr","i","img","li","listing","main","meta","nobr","ol","p","pre","ruby","s","small","span","strong","strike","sub","sup","table","tt","u","ul","var"].forEach(t=>Qe[t]=1)
 let Ze="undefined"==typeof document?null:document
 class ts{constructor(t){this.document=t,this.setupUselessElement()}setupUselessElement(){this.uselessElement=this.document.createElement("div")}createElement(t,e){let s,i
 if(e?(s=e.namespaceURI===qe||"svg"===t,i=Je[e.tagName]):(s="svg"===t,i=!1),s&&!i){if(Qe[t])throw new Error(`Cannot create a ${t} inside an SVG context`)
 return this.document.createElementNS(qe,t)}return this.document.createElement(t)}insertBefore(t,e,s){t.insertBefore(e,s)}insertHTMLBefore(t,e,s){return function(t,e,s,i){let r,n=e,a=t,l=s,o=l?l.previousSibling:n.lastChild
-if(null===i||""===i)return new Xe(n,null,null)
+if(null===i||""===i)return new We(n,null,null)
 null===l?(n.insertAdjacentHTML("beforeend",i),r=n.lastChild):l instanceof HTMLElement?(l.insertAdjacentHTML("beforebegin",i),r=l.previousSibling):(n.insertBefore(a,l),a.insertAdjacentHTML("beforebegin",i),r=a.previousSibling,n.removeChild(a))
 let h=o?o.nextSibling:n.firstChild
-return new Xe(n,h,r)}(this.uselessElement,t,e,s)}createTextNode(t){return this.document.createTextNode(t)}createComment(t){return this.document.createComment(t)}}var es;(function(t){class e extends ts{createElementNS(t,e){return this.document.createElementNS(t,e)}setAttribute(t,e,s,i=null){i?t.setAttributeNS(i,e,s):t.setAttribute(e,s)}}t.TreeConstruction=e
+return new We(n,h,r)}(this.uselessElement,t,e,s)}createTextNode(t){return this.document.createTextNode(t)}createComment(t){return this.document.createComment(t)}}var es;(function(t){class e extends ts{createElementNS(t,e){return this.document.createElementNS(t,e)}setAttribute(t,e,s,i=null){i?t.setAttributeNS(i,e,s):t.setAttribute(e,s)}}t.TreeConstruction=e
 let s=e
 s=R(Ze,s),s=B(Ze,s,qe),t.DOMTreeConstruction=s})(es||(es={}))
 class ss extends ts{constructor(t){super(t),this.document=t,this.namespace=null}setAttribute(t,e,s){t.setAttribute(e,s)}removeAttribute(t,e){t.removeAttribute(e)}insertAfter(t,e,s){this.insertBefore(t,e,s.nextSibling)}}let is=ss
@@ -545,20 +545,20 @@ this.value=e,t.__setProperty(s,e)}}update(t,e){var s=this.attribute
 let i=s.element,r=s.name
 this.value!==t&&(i[r]=this.value=t,null!==t&&void 0!==t||this.removeAttribute())}removeAttribute(){var t=this.attribute
 let e=t.element,s=t.name,i=t.namespace
-i?e.removeAttributeNS(i,s):e.removeAttribute(s)}}class gs extends ms{set(t,e,s){var i=this.attribute
+i?e.removeAttributeNS(i,s):e.removeAttribute(s)}}class fs extends ms{set(t,e,s){var i=this.attribute
 let r=j(s,i.element,i.name,e)
 super.set(t,r,s)}update(t,e){var s=this.attribute
 let i=j(e,s.element,s.name,t)
-super.update(i,e)}}class fs extends ds{set(t,e,s){var i=this.attribute
+super.update(i,e)}}class gs extends ds{set(t,e,s){var i=this.attribute
 let r=j(s,i.element,i.name,e)
 super.set(t,r,s)}update(t,e){var s=this.attribute
 let i=j(e,s.element,s.name,t)
 super.update(i,e)}}class bs extends ms{set(t,e){t.__setProperty("value",E(e))}update(t){let e=this.attribute.element,s=e.value,i=E(t)
 s!==i&&(e.value=i)}}class ys extends ms{set(t,e){null!==e&&void 0!==e&&!1!==e&&t.__setProperty("selected",!0)}update(t){let e=this.attribute.element
 e.selected=!!t}}class vs{constructor(t,e,s,i){this.slots=t,this.callerScope=e,this.evalScope=s,this.partialMap=i}static root(t,e=0){let s=new Array(e+1)
-for(let i=0;i<=e;i++)s[i]=Wt
+for(let i=0;i<=e;i++)s[i]=Xt
 return new vs(s,null,null,null).init({self:t})}static sized(t=0){let e=new Array(t+1)
-for(let s=0;s<=t;s++)e[s]=Wt
+for(let s=0;s<=t;s++)e[s]=Xt
 return new vs(e,null,null,null)}init({self:t}){return this.slots[0]=t,this}getSelf(){return this.get(0)}getSymbol(t){return this.get(t)}getBlock(t){return this.get(t)}getEvalScope(){return this.evalScope}getPartialMap(){return this.partialMap}bind(t,e){this.set(t,e)}bindSelf(t){this.set(0,t)}bindSymbol(t,e){this.set(t,e)}bindBlock(t,e){this.set(t,e)}bindEvalScope(t){this.evalScope=t}bindPartialMap(t){this.partialMap=t}bindCallerScope(t){this.callerScope=t}getCallerScope(){return this.callerScope}child(){return new vs(this.slots.slice(),this.callerScope,this.evalScope,this.partialMap)}get(t){if(t>=this.slots.length)throw new RangeError(`BUG: cannot get $${t} from scope; length=${this.slots.length}`)
 return this.slots[t]}set(t,e){if(t>=this.slots.length)throw new RangeError(`BUG: cannot get $${t} from scope; length=${this.slots.length}`)
 this.slots[t]=e}}class ks{constructor(){this.scheduledInstallManagers=[],this.scheduledInstallModifiers=[],this.scheduledUpdateModifierManagers=[],this.scheduledUpdateModifiers=[],this.createdComponents=[],this.createdManagers=[],this.updatedComponents=[],this.updatedManagers=[],this.destructors=[]}didCreate(t,e){this.createdComponents.push(t),this.createdManagers.push(e)}didUpdate(t,e){this.updatedComponents.push(t),this.updatedManagers.push(e)}scheduleInstallModifier(t,e){this.scheduledInstallManagers.push(e),this.scheduledInstallModifiers.push(t)}scheduleUpdateModifier(t,e){this.scheduledUpdateModifierManagers.push(e),this.scheduledUpdateModifiers.push(t)}didDestroy(t){this.destructors.push(t)}commit(){let t=this.createdComponents,e=this.createdManagers
@@ -572,7 +572,7 @@ for(let h=0;h<n.length;h++){let t=n[h],e=a[h]
 t.install(e)}let l=this.scheduledUpdateModifierManagers,o=this.scheduledUpdateModifiers
 for(let h=0;h<l.length;h++){let t=l[h],e=o[h]
 t.update(e)}}}class Ss{constructor({appendOperations:t,updateOperations:e}){this._transaction=null,this.appendOperations=t,this.updateOperations=e}toConditionalReference(t){return new Qt(t)}getAppendOperations(){return this.appendOperations}getDOM(){return this.updateOperations}getIdentity(t){return n(t)+""}begin(){this._transaction=new ks}get transaction(){return this._transaction}didCreate(t,e){this.transaction.didCreate(t,e)}didUpdate(t,e){this.transaction.didUpdate(t,e)}scheduleInstallModifier(t,e){this.transaction.scheduleInstallModifier(t,e)}scheduleUpdateModifier(t,e){this.transaction.scheduleUpdateModifier(t,e)}didDestroy(t){this.transaction.didDestroy(t)}commit(){let t=this.transaction
-this._transaction=null,t.commit()}attributeFor(t,e,s,i=null){return V(t,e)}}class ws{constructor(t){this.trusting=t}retry(t,e){let s=this.bounds,i=s.parentElement(),r=D(s),n=Ts.forInitialRender(t,{element:i,nextSibling:r})
+this._transaction=null,t.commit()}attributeFor(t,e,s,i=null){return V(t,e)}}class ws{constructor(t){this.trusting=t}retry(t,e){let s=this.bounds,i=s.parentElement(),r=L(s),n=Ts.forInitialRender(t,{element:i,nextSibling:r})
 return this.trusting?n.__appendTrustingDynamicContent(e):n.__appendCautiousDynamicContent(e)}}class _s{constructor(t){this.inner=t,this.bounds=t.bounds}parentElement(){return this.bounds.parentElement()}firstNode(){return this.bounds.firstNode()}lastNode(){return this.bounds.lastNode()}update(t,e){let s=this.inner=this.inner.update(t,e)
 return this.bounds=s.bounds,this}}class Es extends ws{constructor(t,e,s){super(s),this.bounds=t,this.lastValue=e}update(t,e){let s=this.lastValue
 if(e===s)return this
@@ -583,14 +583,14 @@ return e===s?this:C(e)&&e.toHTML()===s.toHTML()?(this.lastValue=e,this):this.ret
 if(e===s)return this
 return function(t){return x(t)?"":O(t)?t:C(t)?t.toHTML():A(t)?t:String(t)}(e)===s?this:this.retry(t,e)}}class Ns{constructor(t){this.node=t}firstNode(){return this.node}}class Os{constructor(t){this.node=t}lastNode(){return this.node}}class Ts{constructor(t,e,s){this.constructing=null,this.operations=null,this.cursorStack=new st,this.blockStack=new st,this.pushElement(e,s),this.env=t,this.dom=t.getAppendOperations(),this.updateOperations=t.getDOM()}static forInitialRender(t,e){let s=new this(t,e.element,e.nextSibling)
 return s.pushSimpleBlock(),s}static resume(t,e,s){let i=new this(t,e.parentElement(),s)
-return i.pushSimpleBlock(),i.pushBlockTracker(e),i}get element(){return this.cursorStack.current.element}get nextSibling(){return this.cursorStack.current.nextSibling}expectConstructing(t){return this.constructing}block(){return this.blockStack.current}popElement(){this.cursorStack.pop(),this.cursorStack.current}pushSimpleBlock(){return this.pushBlockTracker(new Ls(this.element))}pushUpdatableBlock(){return this.pushBlockTracker(new Bs(this.element))}pushBlockList(t){return this.pushBlockTracker(new Rs(this.element,t))}pushBlockTracker(t,e=!1){let s=this.blockStack.current
+return i.pushSimpleBlock(),i.pushBlockTracker(e),i}get element(){return this.cursorStack.current.element}get nextSibling(){return this.cursorStack.current.nextSibling}expectConstructing(t){return this.constructing}block(){return this.blockStack.current}popElement(){this.cursorStack.pop(),this.cursorStack.current}pushSimpleBlock(){return this.pushBlockTracker(new Ds(this.element))}pushUpdatableBlock(){return this.pushBlockTracker(new Bs(this.element))}pushBlockList(t){return this.pushBlockTracker(new Rs(this.element,t))}pushBlockTracker(t,e=!1){let s=this.blockStack.current
 return null!==s&&(s.newDestroyable(t),e||s.didAppendBounds(t)),this.__openBlock(),this.blockStack.push(t),t}popBlock(){return this.block().finalize(this),this.__closeBlock(),this.blockStack.pop()}__openBlock(){}__closeBlock(){}openElement(t){let e=this.__openElement(t)
 return this.constructing=e,e}__openElement(t){return this.dom.createElement(t,this.element)}flushElement(){let t=this.element,e=this.constructing
 this.__flushElement(t,e),this.constructing=null,this.operations=null,this.pushElement(e,null),this.didOpenElement(e)}__flushElement(t,e){this.dom.insertBefore(t,e,this.nextSibling)}closeElement(){this.willCloseElement(),this.popElement()}pushRemoteElement(t,e,s=null){this.__pushRemoteElement(t,e,s)}__pushRemoteElement(t,e,s){this.pushElement(t,s)
-let i=new Ds(t)
+let i=new Ls(t)
 this.pushBlockTracker(i,!0)}popRemoteElement(){this.popBlock(),this.popElement()}pushElement(t,e){this.cursorStack.push(new Ye(t,e))}didAddDestroyable(t){this.block().newDestroyable(t)}didAppendBounds(t){return this.block().didAppendBounds(t),t}didAppendNode(t){return this.block().didAppendNode(t),t}didOpenElement(t){return this.block().openElement(t),t}willCloseElement(){this.block().closeElement()}appendText(t){return this.didAppendNode(this.__appendText(t))}__appendText(t){let e=this.dom,s=this.element,i=this.nextSibling,r=e.createTextNode(t)
 return e.insertBefore(s,r,i),r}__appendNode(t){return this.dom.insertBefore(this.element,t,this.nextSibling),t}__appendFragment(t){let e=t.firstChild
-if(e){let s=function(t,e,s){return new Xe(t,e,s)}(this.element,e,t.lastChild)
+if(e){let s=function(t,e,s){return new We(t,e,s)}(this.element,e,t.lastChild)
 return this.dom.insertBefore(this.element,t,this.nextSibling),s}return T(this.element,this.__appendComment(""))}__appendHTML(t){return this.dom.insertHTMLBefore(this.element,this.nextSibling,t)}appendTrustingDynamicContent(t){let e=new _s(this.__appendTrustingDynamicContent(t))
 return this.didAppendBounds(e),e}__appendTrustingDynamicContent(t){if(O(t))return this.trustedContent(t)
 if(x(t))return this.trustedContent("")
@@ -607,10 +607,10 @@ return new Cs(s,t,!1)}return this.untrustedContent(String(t))}trustedContent(t){
 return new As(e,t,!0)}untrustedContent(t){let e=this.__appendText(t),s=T(this.element,e)
 return new Es(s,t,!1)}appendComment(t){return this.didAppendNode(this.__appendComment(t))}__appendComment(t){let e=this.dom,s=this.element,i=this.nextSibling,r=e.createComment(t)
 return e.insertBefore(s,r,i),r}__setAttribute(t,e,s){this.dom.setAttribute(this.constructing,t,e,s)}__setProperty(t,e){this.constructing[t]=e}setStaticAttribute(t,e,s){this.__setAttribute(t,e,s)}setDynamicAttribute(t,e,s,i){let r=this.constructing,n=new(this.env.attributeFor(r,t,s,i))({element:r,name:t,namespace:i||null})
-return n.set(this,e,this.env),n}}class Ls{constructor(t){this.parent=t,this.first=null,this.last=null,this.destroyables=null,this.nesting=0}destroy(){let t=this.destroyables
-if(t&&t.length)for(let e=0;e<t.length;e++)t[e].destroy()}parentElement(){return this.parent}firstNode(){return this.first&&this.first.firstNode()}lastNode(){return this.last&&this.last.lastNode()}openElement(t){this.didAppendNode(t),this.nesting++}closeElement(){this.nesting--}didAppendNode(t){0===this.nesting&&(this.first||(this.first=new Ns(t)),this.last=new Os(t))}didAppendBounds(t){0===this.nesting&&(this.first||(this.first=t),this.last=t)}newDestroyable(t){this.destroyables=this.destroyables||[],this.destroyables.push(t)}finalize(t){this.first||t.appendComment("")}}class Ds extends Ls{destroy(){super.destroy(),D(this)}}class Bs extends Ls{reset(t){let e=this.destroyables
+return n.set(this,e,this.env),n}}class Ds{constructor(t){this.parent=t,this.first=null,this.last=null,this.destroyables=null,this.nesting=0}destroy(){let t=this.destroyables
+if(t&&t.length)for(let e=0;e<t.length;e++)t[e].destroy()}parentElement(){return this.parent}firstNode(){return this.first&&this.first.firstNode()}lastNode(){return this.last&&this.last.lastNode()}openElement(t){this.didAppendNode(t),this.nesting++}closeElement(){this.nesting--}didAppendNode(t){0===this.nesting&&(this.first||(this.first=new Ns(t)),this.last=new Os(t))}didAppendBounds(t){0===this.nesting&&(this.first||(this.first=t),this.last=t)}newDestroyable(t){this.destroyables=this.destroyables||[],this.destroyables.push(t)}finalize(t){this.first||t.appendComment("")}}class Ls extends Ds{destroy(){super.destroy(),L(this)}}class Bs extends Ds{reset(t){let e=this.destroyables
 if(e&&e.length)for(let i=0;i<e.length;i++)t.didDestroy(e[i])
-let s=D(this)
+let s=L(this)
 return this.first=null,this.last=null,this.destroyables=null,this.nesting=0,s}}class Rs{constructor(t,e){this.parent=t,this.boundList=e,this.parent=t,this.boundList=e}destroy(){this.boundList.forEachNode(t=>t.destroy())}parentElement(){return this.parent}firstNode(){let t=this.boundList.head()
 return t&&t.firstNode()}lastNode(){let t=this.boundList.tail()
 return t&&t.lastNode()}openElement(t){}closeElement(){}didAppendNode(t){}didAppendBounds(t){}newDestroyable(t){}finalize(t){}}class Fs{constructor(t,e,{alwaysRevalidate:s=!1}){this.frameStack=new st,this.env=t,this.constants=e.constants,this.dom=t.getDOM(),this.alwaysRevalidate=s}execute(t,e){let s=this.frameStack
@@ -623,8 +623,8 @@ l.execute(i,e=>{e.stack=Hs.restore(t.stack),e.updatingOpcodeStack.push(o),e.upda
 l=i?(o=r[i]).bounds.firstNode():this.marker
 let h=n.vmForInsertion(l),u=null,c=n.start
 h.execute(c,i=>{r[t]=u=i.iterate(s,e),i.updatingOpcodeStack.push(new rt),i.updateWith(u),i.updatingOpcodeStack.push(u.children)}),a.insertBefore(u,o),this.didInsert=!0}retain(t,e,s){}move(t,e,s,i){let r=this.map,n=this.updating,a=r[t],l=r[i]||null
-i?L(a,l.firstNode()):L(a,this.marker),n.remove(a),n.insertBefore(a,l)}delete(t){let e=this.map,s=e[t]
-s.didDestroy(),D(s),this.updating.remove(s),delete e[t],this.didDelete=!0}done(){this.opcode.didInitializeChildren(this.didInsert||this.didDelete)}}class js extends Ms{constructor(t,e,s,i,r){super(t,e,s,i),this.type="list-block",this.map=a(),this.lastIterated=1,this.artifacts=r
+i?D(a,l.firstNode()):D(a,this.marker),n.remove(a),n.insertBefore(a,l)}delete(t){let e=this.map,s=e[t]
+s.didDestroy(),L(s),this.updating.remove(s),delete e[t],this.didDelete=!0}done(){this.opcode.didInitializeChildren(this.didInsert||this.didDelete)}}class js extends Ms{constructor(t,e,s,i,r){super(t,e,s,i),this.type="list-block",this.map=a(),this.lastIterated=1,this.artifacts=r
 let n=this._tag=yt.create(ct)
 this.tag=p([r.tag,n])}didInitializeChildren(t=!0){this.lastIterated=this.artifacts.tag.value(),t&&this._tag.inner.update(c(this.children))}evaluate(t){let e=this.artifacts,s=this.lastIterated
 if(!e.tag.validate(s)){let s=this.bounds,i=t.dom,r=i.createComment("")
@@ -633,12 +633,12 @@ let n=new Is(this,r)
 new At({target:n,artifacts:e}).sync(),this.parentElement().removeChild(r)}super.evaluate(t)}vmForInsertion(t){let e=this.bounds,s=this.state,i=Ts.forInitialRender(s.env,{element:e.parentElement(),nextSibling:t})
 return Us.resume(s,i)}}class zs{constructor(t,e,s){this.vm=t,this.ops=e,this.exceptionHandler=s,this.vm=t,this.ops=e,this.current=e.head()}goto(t){this.current=t}nextStatement(){let t=this.current,e=this.ops
 return t&&(this.current=e.nextNode(t)),t}handleException(){this.exceptionHandler&&this.exceptionHandler.handleException()}}class Vs{constructor(t,e,s,i){this.env=t,this.program=e,this.updating=s,this.bounds=i}rerender({alwaysRevalidate:t=!1}={alwaysRevalidate:!1}){let e=this.env,s=this.program,i=this.updating
-new Fs(e,s,{alwaysRevalidate:t}).execute(i,this)}parentElement(){return this.bounds.parentElement()}firstNode(){return this.bounds.firstNode()}lastNode(){return this.bounds.lastNode()}handleException(){throw"this should never happen"}destroy(){this.bounds.destroy(),D(this.bounds)}}class Hs{constructor(t,e,s){this.stack=t,this.fp=e,this.sp=s}static empty(){return new this([],0,-1)}static restore(t){return new this(t.slice(),0,t.length-1)}push(t){this.stack[++this.sp]=t}dup(t=this.sp){this.push(this.stack[t])}pop(t=1){let e=this.stack[this.sp]
+new Fs(e,s,{alwaysRevalidate:t}).execute(i,this)}parentElement(){return this.bounds.parentElement()}firstNode(){return this.bounds.firstNode()}lastNode(){return this.bounds.lastNode()}handleException(){throw"this should never happen"}destroy(){this.bounds.destroy(),L(this.bounds)}}class Hs{constructor(t,e,s){this.stack=t,this.fp=e,this.sp=s}static empty(){return new this([],0,-1)}static restore(t){return new this(t.slice(),0,t.length-1)}push(t){this.stack[++this.sp]=t}dup(t=this.sp){this.push(this.stack[t])}pop(t=1){let e=this.stack[this.sp]
 return this.sp-=t,e}peek(t=0){return this.stack[this.sp-t]}get(t,e=this.fp){return this.stack[e+t]}set(t,e,s=this.fp){this.stack[s+e]=t}slice(t,e){return this.stack.slice(t,e)}capture(t){let e=this.sp+1,s=e-t
 return this.stack.slice(s,e)}reset(){this.stack.length=0}toArray(){return this.stack.slice(this.fp,this.sp+1)}}class Us{constructor(t,e,s,i,r){this.program=t,this.env=e,this.elementStack=r,this.dynamicScopeStack=new st,this.scopeStack=new st,this.updatingOpcodeStack=new st,this.cacheGroups=new st,this.listBlockStack=new st,this.stack=Hs.empty(),this._pc=-1,this.ra=-1,this.currentOpSize=0,this.s0=null,this.s1=null,this.t0=null,this.t1=null,this.v0=null,this.env=e,this.heap=t.heap,this.constants=t.constants,this.elementStack=r,this.scopeStack.push(s),this.dynamicScopeStack.push(i)}get pc(){return this._pc}set pc(t){this._pc=t}get fp(){return this.stack.fp}set fp(t){this.stack.fp=t}get sp(){return this.stack.sp}set sp(t){this.stack.sp=t}fetch(t){this.stack.push(this[$t[t]])}load(t){this[$t[t]]=this.stack.pop()}fetchValue(t){return this[$t[t]]}loadValue(t,e){this[$t[t]]=e}pushFrame(){this.stack.push(this.ra),this.stack.push(this.fp),this.fp=this.sp-1}popFrame(){this.sp=this.fp-1,this.ra=this.stack.get(0),this.fp=this.stack.get(1)}goto(t){let e=this.pc+t-this.currentOpSize
 this.pc=e}call(t){this.ra=this.pc,this.pc=this.heap.getaddr(t)}returnTo(t){let e=this.pc+t-this.currentOpSize
 this.ra=e}return(){this.pc=this.ra}static initial(t,e,s,i,r,n,a){let l=t.heap.scopesizeof(a),o=vs.root(s,l),h=new Us(t,e,o,r,n)
-return h.pc=h.heap.getaddr(a),h.updatingOpcodeStack.push(new rt),h}static resume({program:t,env:e,scope:s,dynamicScope:i},r){return new Us(t,e,s,i,r)}capture(t){return{env:this.env,program:this.program,dynamicScope:this.dynamicScope(),scope:this.scope(),stack:this.stack.capture(t)}}beginCacheGroup(){this.cacheGroups.push(this.updating().tail())}commitCacheGroup(){let t=new Re("END"),e=this.updating(),s=this.cacheGroups.pop(),i=s?e.nextNode(s):e.head(),r=e.tail(),n=c(new nt(i,r)),a=new De(n,t)
+return h.pc=h.heap.getaddr(a),h.updatingOpcodeStack.push(new rt),h}static resume({program:t,env:e,scope:s,dynamicScope:i},r){return new Us(t,e,s,i,r)}capture(t){return{env:this.env,program:this.program,dynamicScope:this.dynamicScope(),scope:this.scope(),stack:this.stack.capture(t)}}beginCacheGroup(){this.cacheGroups.push(this.updating().tail())}commitCacheGroup(){let t=new Re("END"),e=this.updating(),s=this.cacheGroups.pop(),i=s?e.nextNode(s):e.head(),r=e.tail(),n=c(new nt(i,r)),a=new Le(n,t)
 e.insertBefore(a,i),e.append(new Be(a)),e.append(t)}enter(t){let e=new rt,s=this.capture(t),i=this.elements().pushUpdatableBlock(),r=new Ps(this.heap.gethandle(this.pc),s,i,e)
 this.didEnter(r)}iterate(t,e){let s=this.stack
 s.push(e),s.push(t)
@@ -662,12 +662,12 @@ let s=e.block
 this.symbols=s.symbols,this.hasEval=s.hasEval,this.statements=s.statements,this.referrer=e.referrer,this.id=e.id||`client-${Gs++}`}renderLayout(t){let e=t.env,s=t.self,i=t.dynamicScope
 var r=t.args
 let n=void 0===r?Ce:r,a=t.builder,l=this.asLayout().compile(),o=Us.initial(this.options.program,e,s,n,i,a,l)
-return new $s(o)}asLayout(){return this.layout?this.layout:this.layout=$(this.parsedLayout,this.options,!1)}asPartial(){return this.partial?this.partial:this.partial=$(this.parsedLayout,this.options,!0)}}class Xs{get(t){return qs.create(this,t)}}class Ws extends Xs{constructor(){super(...arguments),this._lastRevision=null,this._lastValue=null}value(){let t=this.tag,e=this._lastRevision,s=this._lastValue
+return new $s(o)}asLayout(){return this.layout?this.layout:this.layout=$(this.parsedLayout,this.options,!1)}asPartial(){return this.partial?this.partial:this.partial=$(this.parsedLayout,this.options,!0)}}class Ws{get(t){return qs.create(this,t)}}class Xs extends Ws{constructor(){super(...arguments),this._lastRevision=null,this._lastValue=null}value(){let t=this.tag,e=this._lastRevision,s=this._lastValue
 return e&&t.validate(e)||(s=this._lastValue=this.compute(),this._lastRevision=t.value()),s}}class Ks extends wt{constructor(){super(...arguments),this.children=a()}get(t){let e=this.children[t]
-return e||(e=this.children[t]=new Js(this.inner,t)),e}}class qs extends Ws{static create(t,e){return o(t)?new Js(t.value(),e):new Qs(t,e)}get(t){return new Qs(this,t)}}class Js extends qs{constructor(t,e){super(),this._parentValue=t,this._propertyKey=e,this.tag=b(t,e)}compute(){return this._parentValue[this._propertyKey]}}class Qs extends qs{constructor(t,e){super()
+return e||(e=this.children[t]=new Js(this.inner,t)),e}}class qs extends Xs{static create(t,e){return o(t)?new Js(t.value(),e):new Qs(t,e)}get(t){return new Qs(this,t)}}class Js extends qs{constructor(t,e){super(),this._parentValue=t,this._propertyKey=e,this.tag=b(t,e)}compute(){return this._parentValue[this._propertyKey]}}class Qs extends qs{constructor(t,e){super()
 let s=t.tag,i=yt.create(ct)
 this._parentReference=t,this._parentObjectTag=i,this._propertyKey=e,this.tag=p([s,i])}compute(){let t=this._parentReference,e=this._parentObjectTag,s=this._propertyKey,i=t.value()
-return e.inner.update(b(i,s)),"string"==typeof i&&"length"===s?i.length:"object"==typeof i&&i?i[s]:void 0}}class Zs extends Xs{constructor(t){super(),this.tag=mt.create(),this._value=t}value(){return this._value}update(t){t!==this._value&&(this.tag.inner.dirty(),this._value=t)}}class ti{constructor(t,e,s){let i=t.ComponentClass,r=t.name
+return e.inner.update(b(i,s)),"string"==typeof i&&"length"===s?i.length:"object"==typeof i&&i?i[s]:void 0}}class Zs extends Ws{constructor(t){super(),this.tag=mt.create(),this._value=t}value(){return this._value}update(t){t!==this._value&&(this.tag.inner.dirty(),this._value=t)}}class ti{constructor(t,e,s){let i=t.ComponentClass,r=t.name
 this.args=e
 let n={debugName:r,args:this.namedArgsSnapshot()}
 v(n,s),this.component=i.create(n)}get tag(){return this.args.tag}namedArgsSnapshot(){return Object.freeze(this.args.named.value())}}class ei{static create(t){return new ei(t)}constructor(t){this.env=t.env}prepareArgs(t,e){return null}getCapabilities(t){return t.capabilities}getLayout({name:t,layout:e},s){return s.compileTemplate(t,e)}create(t,e,s,i,r,n){let a=y(this.env)
@@ -699,16 +699,16 @@ this._registry.registerInjection(i,e,r)}registeredInjections(t){let e=this._toAb
 return this._registry.registeredInjections(e)}_toAbsoluteSpecifier(t,e){return this._resolver.identify(t,e)}_toAbsoluteOrTypeSpecifier(t){return function(t){return-1===t.indexOf(":")}(t)?t:this._toAbsoluteSpecifier(t)}}class di{constructor(t=null){this.bucket=t?s({},t):{}}get(t){return this.bucket[t]}set(t,e){return this.bucket[t]=e}child(){return new di(this.bucket)}}class mi{constructor(t,e){this.position=0,this.array=t,this.keyFor=e}isEmpty(){return 0===this.array.length}next(){let t=this.position,e=this.array,s=this.keyFor
 if(t>=e.length)return null
 let i=e[t],r=s(i,t),n=t
-return this.position++,{key:r,value:i,memo:n}}}class gi{constructor(t,e,s){this.position=0,this.keys=t,this.values=e,this.keyFor=s}isEmpty(){return 0===this.keys.length}next(){let t=this.position,e=this.keys,s=this.values,i=this.keyFor
+return this.position++,{key:r,value:i,memo:n}}}class fi{constructor(t,e,s){this.position=0,this.keys=t,this.values=e,this.keyFor=s}isEmpty(){return 0===this.keys.length}next(){let t=this.position,e=this.keys,s=this.values,i=this.keyFor
 if(t>=e.length)return null
 let r=s[t],n=e[t],a=i(r,n)
-return this.position++,{key:a,value:r,memo:n}}}class fi{isEmpty(){return!0}next(){throw new Error("Cannot call next() on an empty iterator")}}const bi=new fi
+return this.position++,{key:a,value:r,memo:n}}}class gi{isEmpty(){return!0}next(){throw new Error("Cannot call next() on an empty iterator")}}const bi=new gi
 class yi{constructor(t,e){this.tag=t.tag,this.ref=t,this.keyFor=e}iterate(){let t=this.ref,e=this.keyFor,s=t.value()
 if(Array.isArray(s))return s.length>0?new mi(s,e):bi
 if(void 0===s||null===s)return bi
 if(void 0!==s.forEach){let t=[]
 return s.forEach(function(e){t.push(e)}),t.length>0?new mi(t,e):bi}if("object"==typeof s){let t=Object.keys(s)
-return t.length>0?new gi(t,t.map(t=>s[t]),e):bi}throw new Error(`Don't know how to {{#each ${s}}}`)}valueReferenceFor(t){return new Zs(t.value)}updateValueReference(t,e){t.update(e.value)}memoReferenceFor(t){return new Zs(t.memo)}updateMemoReference(t,e){t.update(e.memo)}}const vi={},ki=Object.freeze([])
+return t.length>0?new fi(t,t.map(t=>s[t]),e):bi}throw new Error(`Don't know how to {{#each ${s}}}`)}valueReferenceFor(t){return new Zs(t.value)}updateValueReference(t,e){t.update(e.value)}memoReferenceFor(t){return new Zs(t.memo)}updateMemoReference(t,e){t.update(e.memo)}}const vi={},ki=Object.freeze([])
 class Si{constructor(){this.strings=[],this.arrays=[ki],this.tables=[],this.handles=[],this.serializables=[],this.resolved=[],this.floats=[],this.negatives=[]}float(t){let e=this.floats.indexOf(t)
 return e>-1?e:this.floats.push(t)-1}negative(t){return this.negatives.push(t)-1}string(t){let e=this.strings.indexOf(t)
 return e>-1?e:this.strings.push(t)-1}stringArray(t){let e=new Array(t.length)
@@ -729,21 +729,21 @@ return this.handle+=2,t}finishMalloc(t,e){let s=this.table[t],i=Y(this.offset-s,
 this.table[t+1]=i}size(){return this.offset}getaddr(t){return this.table[t]}gethandle(t){this.table.push(t,Y(0,0,xi.Pointer))
 let e=this.handle
 return this.handle+=2,e}sizeof(t){return-1}scopesizeof(t){return(1073676288&this.table[t+1])>>16}free(t){let e=this.table[t+1]
-this.table[t+1]=X(e,xi.Freed)}compact(){let t=0,e=this.table,s=this.table.length,i=this.heap
+this.table[t+1]=W(e,xi.Freed)}compact(){let t=0,e=this.table,s=this.table.length,i=this.heap
 for(let r=0;r<s;r+=2){let s=e[r],n=e[r+1],a=65535&n,l=-1&n
-if(l!==xi.Purged)if(l===xi.Freed)e[r+1]=X(n,xi.Purged),t+=a
+if(l!==xi.Purged)if(l===xi.Freed)e[r+1]=W(n,xi.Purged),t+=a
 else if(l===xi.Allocated){for(let e=s;e<=r+a;e++)i[e-t]=i[e]
 e[r]=s-t}else l===xi.Pointer&&(e[r]=s-t)}this.offset=this.offset-t}capture(){let t=function(t,e,s){if(t instanceof Uint16Array){if(void 0!==t.slice)return t.slice(e,s).buffer
 let i=new Uint16Array(s)
 for(;e<s;e++)i[e]=t[e]
 return i.buffer}return null}(this.heap,0,this.offset)
-return{handle:this.handle,table:this.table,buffer:t}}}class Ai{constructor(t=new Si,e=new Ci){this.constants=t,this.heap=e,this._opcode=new Ei(this.heap)}opcode(t){return this._opcode.offset=t,this._opcode}}class Ni extends Ai{}class Oi{constructor(){this.byName=a(),this.byHandle=a()}hasName(t){return t in this.byName}getHandle(t){return this.byName[t]}hasHandle(t){return t in this.byHandle}getByHandle(t){return this.byHandle[t]}register(t,e,s){this.byHandle[t]=s,this.byName[e]=t}}class Ti{constructor(t,e){this.tag=pt,this.parent=t,this.property=e}value(){return this.parent.value()[this.property]}get(t){return new Ti(this,t)}}class Li{constructor(t,e){this.tag=pt,this.helper=t,this.args=e.capture()}value(){let t=this.helper,e=this.args
-return t(e.positional.value(),e.named.value())}get(t){return new Ti(this,t)}}class Di{constructor(t){this.owner=t,this.handleLookup=[],this.cache={component:new Oi,template:new Oi,compiledTemplate:new Oi,helper:new Oi,manager:new Oi,modifier:new Oi}}setCompileOptions(t){this.templateOptions=t}lookup(t,e,s){return this.cache[t].hasName(e)?this.cache[t].getHandle(e):null}register(t,e,s){let i=this.cache[t],r=this.handleLookup.length
+return{handle:this.handle,table:this.table,buffer:t}}}class Ai{constructor(t=new Si,e=new Ci){this.constants=t,this.heap=e,this._opcode=new Ei(this.heap)}opcode(t){return this._opcode.offset=t,this._opcode}}class Ni extends Ai{}class Oi{constructor(){this.byName=a(),this.byHandle=a()}hasName(t){return t in this.byName}getHandle(t){return this.byName[t]}hasHandle(t){return t in this.byHandle}getByHandle(t){return this.byHandle[t]}register(t,e,s){this.byHandle[t]=s,this.byName[e]=t}}class Ti{constructor(t,e){this.tag=pt,this.parent=t,this.property=e}value(){return this.parent.value()[this.property]}get(t){return new Ti(this,t)}}class Di{constructor(t,e){this.tag=pt,this.helper=t,this.args=e.capture()}value(){let t=this.helper,e=this.args
+return t(e.positional.value(),e.named.value())}get(t){return new Ti(this,t)}}class Li{constructor(t){this.owner=t,this.handleLookup=[],this.cache={component:new Oi,template:new Oi,compiledTemplate:new Oi,helper:new Oi,manager:new Oi,modifier:new Oi}}setCompileOptions(t){this.templateOptions=t}lookup(t,e,s){return this.cache[t].hasName(e)?this.cache[t].getHandle(e):null}register(t,e,s){let i=this.cache[t],r=this.handleLookup.length
 return this.handleLookup.push(i),this.cache[t].register(r,e,s),r}lookupModifier(t,e){let s=this.lookup("modifier",t)
 if(null===s)throw new Error(`Modifier for ${t} not found.`)
 return s}compileTemplate(t,e){if(!this.cache.compiledTemplate.hasName(t)){let s=this.resolve(e),i=s.block,r=s.meta,n=s.id,a=JSON.parse(i),l=new Ys(this.templateOptions,{id:n,block:a,referrer:r}).asLayout(),o={handle:l.compile(),symbolTable:l.symbolTable}
 return this.register("compiledTemplate",t,o),o}let s=this.lookup("compiledTemplate",t)
-return this.resolve(s)}registerHelper(t,e){return this.register("helper",t,(t,s)=>new Li(e,s))}registerInternalHelper(t,e){this.register("helper",t,e)}registerComponent(t,e,s,i){let r=this.registerTemplate(e,i),n=this.managerFor(r.meta.managerId),a=new Ft(t,n,s,r.handle)
+return this.resolve(s)}registerHelper(t,e){return this.register("helper",t,(t,s)=>new Di(e,s))}registerInternalHelper(t,e){this.register("helper",t,e)}registerComponent(t,e,s,i){let r=this.registerTemplate(e,i),n=this.managerFor(r.meta.managerId),a=new Ft(t,n,s,r.handle)
 return this.register("component",t,a)}lookupComponentHandle(t,e){return this.cache.component.hasName(t)||this.lookupComponent(t,e),this.lookup("component",t,e)}managerFor(t="main"){let e
 if(this.cache.manager.hasName(t)){let e=this.cache.manager.getHandle(t)
 return this.cache.manager.getByHandle(e)}{let s=this.owner.rootName
@@ -762,8 +762,8 @@ class Ri{constructor(t){this.resolver=t}getComponentDefinition(t){let s=this.res
 return e(!!s,`Couldn't find a template for ${t}`),s}getCapabilities(t){let e=this.getComponentDefinition(t),s=e.manager,i=e.state
 return s.getCapabilities(i)}getLayout(t){let e=this.getComponentDefinition(t),s=e.manager.getLayout(e,this.resolver)
 return{compile:()=>s.handle,symbolTable:s.symbolTable}}lookupHelper(t,e){return this.resolver.lookupHelper(t,e)}lookupModifier(t,e){return this.resolver.lookupModifier(t,e)}lookupComponentSpec(t,e){return this.resolver.lookupComponentHandle(t,e)}lookupPartial(t,e){return this.resolver.lookupPartial(t,e)}}class Fi extends Ss{static create(t={}){return t.document=t.document||self.document,t.appendOperations=t.appendOperations||new ns(t.document),new Fi(t)}constructor(t){super({appendOperations:t.appendOperations,updateOperations:new rs(t.document||document)}),v(this,y(t))
-let e=this.resolver=new Di(y(this)),s=this.program=new Ni(new _i(e)),i=new oe,r=new Ri(e)
-this.compileOptions={program:s,macros:i,lookup:r,Builder:fe},this.resolver.setCompileOptions(this.compileOptions),e.registerTemplate("main",Bi),e.registerInternalHelper("action",W),e.registerHelper("if",t=>t[0]?t[1]:t[2]),this.uselessAnchor=t.document.createElement("a")}protocolForURL(t){return this.uselessAnchor.href=t,this.uselessAnchor.protocol}iterableFor(t,e){let s
+let e=this.resolver=new Li(y(this)),s=this.program=new Ni(new _i(e)),i=new oe,r=new Ri(e)
+this.compileOptions={program:s,macros:i,lookup:r,Builder:ge},this.resolver.setCompileOptions(this.compileOptions),e.registerTemplate("main",Bi),e.registerInternalHelper("action",X),e.registerHelper("if",t=>t[0]?t[1]:t[2]),this.uselessAnchor=t.document.createElement("a")}protocolForURL(t){return this.uselessAnchor.href=t,this.uselessAnchor.protocol}iterableFor(t,e){let s
 if(!e)throw new Error("Must specify a key for #each")
 switch(e){case"@index":s=((t,e)=>String(e))
 break
@@ -815,17 +815,21 @@ var Hi=function(t,e,s,i){var r,n=arguments.length,a=n<3?e:null===i?i=Object.getO
 if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(t,e,s,i)
 else for(var l=t.length-1;l>=0;l--)(r=t[l])&&(a=(n<3?r(a):n>3?r(e,s,a):r(e,s))||a)
 return n>3&&a&&Object.defineProperty(e,s,a),a}
-const Ui={position:"absolute","transform-origin":"0 0",left:"50%",top:"50%",width:"10px",height:"10px",zoom:".75"}
-class $i extends Bt{constructor(){super(...arguments),this.targetSize=25,this.intervalID=null,this.seconds=0,this.elapsed=0,this.style="",this.x=0,this.y=0,this.s=1e3}tick(){this.seconds=this.seconds%10+1}updateRender(){const t=this.elapsed/1e3%10,e="scaleX("+(1+(t>5?10-t:t)/10)/2.1+") scaleY(0.7) translateZ(0.1px)",s=Object.assign({},Ui,{transform:e})
-this.style=Object.keys(s).map(t=>`${t}:${s[t]}`).join(";")}didInsertElement(){const t=(new Date).getTime()
-this.intervalID=setInterval(this.tick.bind(this),1e3)
-const e=()=>{this.elapsed=(new Date).getTime()-t,this.updateRender(),requestAnimationFrame(e)}
-requestAnimationFrame(e)}}Hi([m],$i.prototype,"seconds",void 0),Hi([m],$i.prototype,"elapsed",void 0),Hi([m],$i.prototype,"style",void 0)
-class Gi extends Bt{get attrs(){let t=this.args.targetSize/2,e=this.args.x-t,s=this.args.y-t,i=this.args.s/2
-return{dotX:e-t,dotY:s-t,s:i,size:this.args.targetSize,renderDot:this.args.s<=this.args.targetSize,x1:e,x2:e-i,x3:e+i,y1:s-i/2,y2:s+i/2,y3:s+i/2}}}(function(t,e,s,i){var r,n=arguments.length,a=n<3?e:null===i?i=Object.getOwnPropertyDescriptor(e,s):i
+const Ui={position:"absolute","transform-origin":"0 0",left:"50%",top:"50%",width:"10px",height:"10px",zoom:".75"},$i=Object.keys(Ui).map(t=>`${t}:${Ui[t]}`).join(";")
+class Gi extends Bt{constructor(){super(...arguments),this.targetSize=25,this.start=0,this.intervalID=null,this.seconds=0,this.elapsed=0,this.style="",this.x=0,this.y=0,this.s=1e3}tick(){this.seconds=this.seconds%10+1}updateRender(){this.elapsed=(new Date).getTime()-this.start
+const t=this.elapsed/1e3%10,e="scaleX("+(1+(t>5?10-t:t)/10)/2.1+") scaleY(0.7) translateZ(0.1px)"
+this.style=`${$i};transform:${e}`}didInsertElement(){this.start=(new Date).getTime(),this.intervalID=setInterval(this.tick.bind(this),1e3)
+const t=()=>{this.updateRender(),requestAnimationFrame(t)}
+setTimeout(t)}}Hi([m],Gi.prototype,"seconds",void 0),Hi([m],Gi.prototype,"elapsed",void 0),Hi([m],Gi.prototype,"style",void 0)
+class Yi extends Bt{get attrs(){let t=this.args.targetSize/2
+var e=this.args
+let s=e.x,i=e.y,r=this.args.s<=this.args.targetSize
+if(r)return{dotX:s-t,dotY:i-t,renderDot:r}
+{let t=this.args.s/2,e=t/2
+return{s:t,renderDot:r,x1:s,x2:s-t,x3:s+t,y1:i-e,y2:i+e,y3:i+e}}}}(function(t,e,s,i){var r,n=arguments.length,a=n<3?e:null===i?i=Object.getOwnPropertyDescriptor(e,s):i
 if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(t,e,s,i)
 else for(var l=t.length-1;l>=0;l--)(r=t[l])&&(a=(n<3?r(a):n>3?r(e,s,a):r(e,s))||a)
-n>3&&a&&Object.defineProperty(e,s,a)})([m("args")],Gi.prototype,"attrs",null)
-var Yi={"component:/sierpinski-glimmer/components/SierpinskiDot":Vi,"template:/sierpinski-glimmer/components/SierpinskiDot":{id:"PI6QDaG/",block:'{"symbols":[],"statements":[[6,"div"],[11,"style",[20,"style"],null],[11,"onmouseenter",[26,"action",[[22,["enter"]]],null],null],[11,"onmouseleave",[26,"action",[[22,["leave"]]],null],null],[8],[0," "],[1,[20,"text"],false],[9]],"hasEval":false}',meta:{specifier:"template:/sierpinski-glimmer/components/SierpinskiDot"}},"component:/sierpinski-glimmer/components/SierpinskiGlimmer":$i,"template:/sierpinski-glimmer/components/SierpinskiGlimmer":{id:"N2UOKSxQ",block:'{"symbols":[],"statements":[[6,"div"],[11,"style",[20,"style"],null],[8],[0,"\\n    "],[6,"div"],[8],[0,"\\n    "],[5,"SierpinskiTriangle",[],[["@x","@y","@s","@targetSize","@children"],[[20,"x"],[20,"y"],[20,"s"],[20,"targetSize"],[20,"seconds"]]],{"statements":[[0,"\\n        "],[1,[20,"seconds"],false],[0,"\\n    "]],"parameters":[]}],[0,"\\n    "],[9],[0,"\\n"],[9]],"hasEval":false}',meta:{specifier:"template:/sierpinski-glimmer/components/SierpinskiGlimmer"}},"component:/sierpinski-glimmer/components/SierpinskiTriangle":Gi,"template:/sierpinski-glimmer/components/SierpinskiTriangle":{id:"IkstrLL/",block:'{"symbols":["@children","@targetSize"],"statements":[[4,"if",[[22,["attrs","renderDot"]]],null,{"statements":[[0,"    "],[5,"SierpinskiDot",[],[["@x","@y","@size","@text"],[[22,["attrs","dotX"]],[22,["attrs","dotY"]],[21,2,[]],[21,1,[]]]],{"statements":[],"parameters":[]}],[0,"\\n"]],"parameters":[]},{"statements":[[0,"    "],[6,"div"],[8],[0,"\\n        "],[5,"SierpinskiTriangle",[],[["@x","@y","@s","@children","@targetSize"],[[22,["attrs","x1"]],[22,["attrs","y1"]],[22,["attrs","s"]],[21,1,[]],[21,2,[]]]],{"statements":[],"parameters":[]}],[0,"\\n        "],[5,"SierpinskiTriangle",[],[["@x","@y","@s","@children","@targetSize"],[[22,["attrs","x2"]],[22,["attrs","y2"]],[22,["attrs","s"]],[21,1,[]],[21,2,[]]]],{"statements":[],"parameters":[]}],[0,"\\n        "],[5,"SierpinskiTriangle",[],[["@x","@y","@s","@children","@targetSize"],[[22,["attrs","x3"]],[22,["attrs","y3"]],[22,["attrs","s"]],[21,1,[]],[21,2,[]]]],{"statements":[],"parameters":[]}],[0,"\\n    "],[9],[0,"\\n"]],"parameters":[]}]],"hasEval":false}',meta:{specifier:"template:/sierpinski-glimmer/components/SierpinskiTriangle"}}},Xi={app:{name:"sierpinski-glimmer",rootName:"sierpinski-glimmer"},types:{application:{definitiveCollection:"main"},component:{definitiveCollection:"components"},"component-test":{unresolvable:!0},helper:{definitiveCollection:"components"},"helper-test":{unresolvable:!0},renderer:{definitiveCollection:"main"},template:{definitiveCollection:"components"}},collections:{main:{types:["application","renderer"]},components:{group:"ui",types:["component","component-test","template","helper","helper-test"],defaultType:"component",privateCollections:["utils"]},styles:{group:"ui",unresolvable:!0},utils:{unresolvable:!0}}}
-class Wi extends Mi{constructor(){let t=new Ii(Yi)
-super({resolver:new Pi(Xi,t),rootName:Xi.app.rootName})}}const Ki=new Wi,qi=document.getElementById("app");(function(t){Lt=t})(()=>{Ki.scheduleRerender()}),Ki.registerInitializer({initialize(t){t.register(`component-manager:/${Ki.rootName}/component-managers/main`,ei)}}),Ki.renderComponent("SierpinskiGlimmer",qi,null),Ki.boot()})
+n>3&&a&&Object.defineProperty(e,s,a)})([m("args")],Yi.prototype,"attrs",null)
+var Wi={"component:/sierpinski-glimmer/components/SierpinskiDot":Vi,"template:/sierpinski-glimmer/components/SierpinskiDot":{id:"PI6QDaG/",block:'{"symbols":[],"statements":[[6,"div"],[11,"style",[20,"style"],null],[11,"onmouseenter",[26,"action",[[22,["enter"]]],null],null],[11,"onmouseleave",[26,"action",[[22,["leave"]]],null],null],[8],[0," "],[1,[20,"text"],false],[9]],"hasEval":false}',meta:{specifier:"template:/sierpinski-glimmer/components/SierpinskiDot"}},"component:/sierpinski-glimmer/components/SierpinskiGlimmer":Gi,"template:/sierpinski-glimmer/components/SierpinskiGlimmer":{id:"hHwWe/dW",block:'{"symbols":[],"statements":[[6,"div"],[11,"style",[20,"style"],null],[8],[0,"\\n    "],[6,"div"],[8],[0,"\\n    "],[5,"SierpinskiTriangle",[],[["@x","@y","@s","@targetSize","@children"],[[20,"x"],[20,"y"],[20,"s"],[20,"targetSize"],[20,"seconds"]]],{"statements":[],"parameters":[]}],[0,"\\n    "],[9],[0,"\\n"],[9]],"hasEval":false}',meta:{specifier:"template:/sierpinski-glimmer/components/SierpinskiGlimmer"}},"component:/sierpinski-glimmer/components/SierpinskiTriangle":Yi,"template:/sierpinski-glimmer/components/SierpinskiTriangle":{id:"IkstrLL/",block:'{"symbols":["@children","@targetSize"],"statements":[[4,"if",[[22,["attrs","renderDot"]]],null,{"statements":[[0,"    "],[5,"SierpinskiDot",[],[["@x","@y","@size","@text"],[[22,["attrs","dotX"]],[22,["attrs","dotY"]],[21,2,[]],[21,1,[]]]],{"statements":[],"parameters":[]}],[0,"\\n"]],"parameters":[]},{"statements":[[0,"    "],[6,"div"],[8],[0,"\\n        "],[5,"SierpinskiTriangle",[],[["@x","@y","@s","@children","@targetSize"],[[22,["attrs","x1"]],[22,["attrs","y1"]],[22,["attrs","s"]],[21,1,[]],[21,2,[]]]],{"statements":[],"parameters":[]}],[0,"\\n        "],[5,"SierpinskiTriangle",[],[["@x","@y","@s","@children","@targetSize"],[[22,["attrs","x2"]],[22,["attrs","y2"]],[22,["attrs","s"]],[21,1,[]],[21,2,[]]]],{"statements":[],"parameters":[]}],[0,"\\n        "],[5,"SierpinskiTriangle",[],[["@x","@y","@s","@children","@targetSize"],[[22,["attrs","x3"]],[22,["attrs","y3"]],[22,["attrs","s"]],[21,1,[]],[21,2,[]]]],{"statements":[],"parameters":[]}],[0,"\\n    "],[9],[0,"\\n"]],"parameters":[]}]],"hasEval":false}',meta:{specifier:"template:/sierpinski-glimmer/components/SierpinskiTriangle"}}},Xi={app:{name:"sierpinski-glimmer",rootName:"sierpinski-glimmer"},types:{application:{definitiveCollection:"main"},component:{definitiveCollection:"components"},"component-test":{unresolvable:!0},helper:{definitiveCollection:"components"},"helper-test":{unresolvable:!0},renderer:{definitiveCollection:"main"},template:{definitiveCollection:"components"}},collections:{main:{types:["application","renderer"]},components:{group:"ui",types:["component","component-test","template","helper","helper-test"],defaultType:"component",privateCollections:["utils"]},styles:{group:"ui",unresolvable:!0},utils:{unresolvable:!0}}}
+class Ki extends Mi{constructor(){let t=new Ii(Wi)
+super({resolver:new Pi(Xi,t),rootName:Xi.app.rootName})}}const qi=new Ki,Ji=document.getElementById("app");(function(t){Dt=t})(()=>{qi.scheduleRerender()}),qi.registerInitializer({initialize(t){t.register(`component-manager:/${qi.rootName}/component-managers/main`,ei)}}),qi.renderComponent("SierpinskiGlimmer",Ji,null),qi.boot()})

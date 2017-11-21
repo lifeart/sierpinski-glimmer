@@ -4,10 +4,8 @@ export default class SierpinskiTriangle extends Component {
     @tracked('args')
     get attrs() {
         let halfTarget = this.args.targetSize / 2;
-        let x =  this.args.x - halfTarget;
-        let y =  this.args.y - halfTarget;
-        let s =  this.args.s / 2;
-        let renderDot =  this.args.s <= this.args.targetSize;
+        let { x, y } = this.args;
+        let renderDot = this.args.s <= this.args.targetSize;
         if (renderDot) {
             return {
                 dotX: x - halfTarget,
@@ -15,15 +13,17 @@ export default class SierpinskiTriangle extends Component {
                 renderDot
             };
         } else {
+            let s = this.args.s / 2;
+            let halfS = s / 2;
             return {
                 s,
                 renderDot,
                 x1: x,
                 x2: x - s,
                 x3: x + s,
-                y1: y - (s / 2),
-                y2: y + (s / 2),
-                y3: y + (s / 2)
+                y1: y - halfS,
+                y2: y + halfS,
+                y3: y + halfS
             };
         }
     }

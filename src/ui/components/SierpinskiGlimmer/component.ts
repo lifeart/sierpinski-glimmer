@@ -10,8 +10,13 @@ const containerStyle = {
     zoom: '.75',
 };
 
+const styleLine =  Object.keys(containerStyle).map((key) => {
+    return `${key}:${containerStyle[key]}`;
+}).join(';');
+
 export default class SierpinskiGlimmer extends Component {
     public targetSize = 25;
+    public start = 0;
     public intervalID = null;
     @tracked public seconds = 0;
     @tracked public elapsed = 0;
@@ -24,23 +29,20 @@ export default class SierpinskiGlimmer extends Component {
     }
 
     public updateRender() {
+        this.elapsed = new Date().getTime() - this.start;
         const t = (this.elapsed / 1000) % 10;
         const scale = 1 + (t > 5 ? 10 - t : t) / 10;
         const transform = 'scaleX(' + (scale / 2.1) + ') scaleY(0.7) translateZ(0.1px)';
-        const style = {...containerStyle, transform};
-        this.style = Object.keys(style).map((key) => {
-            return `${key}:${style[key]}`;
-        }).join(';');
+        this.style = `${styleLine};transform:${transform}`;
     }
 
     public didInsertElement() {
-        const start = new Date().getTime();
+        this.start = new Date().getTime();
         this.intervalID = setInterval(this.tick.bind(this), 1000);
         const update = ()  => {
-            this.elapsed = new Date().getTime() - start;
             this.updateRender();
             requestAnimationFrame(update);
         };
-        requestAnimationFrame(update);
+        setTimeout(update);
     }
 }
