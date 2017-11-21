@@ -15,6 +15,15 @@ export default class SierpinskiTriangle extends Component {
         } else {
             let s = this.args.s / 2;
             let halfS = s / 2;
+            
+            let slowDown = true;
+            if (slowDown) {
+                let e = performance.now() + 0.8;
+                while (performance.now() < e) {
+                    // Artificially long execution time.
+                }
+            }
+
             return {
                 s,
                 renderDot,
