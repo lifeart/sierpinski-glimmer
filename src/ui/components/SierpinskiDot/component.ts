@@ -10,14 +10,13 @@ const dotStyle = {
 
 export default class SierpinskiDot extends Component {
     @tracked private hover = false;
-
-    @tracked('args','hover')
+    private allStyles = '';
+    private tagName = '';
+    @tracked('args', 'hover')
     get text() {
         return this.hover ? '*' + this.args.text + '*' : this.args.text;
     }
-
-    @tracked('args', 'hover')
-    get style() {
+    public didInsertElement() {
         const s = this.args.size * 1.3;
         const newStyle = {
             ...dotStyle,
@@ -27,11 +26,14 @@ export default class SierpinskiDot extends Component {
             'left': (this.args.x) + 'px',
             'border-radius': (s / 2) + 'px',
             'line-height': (s) + 'px',
-            'background': this.hover ? '#ff0' : dotStyle.background
         };
-        return Object.keys(newStyle).map((key) => {
+        this.allStyles =  Object.keys(newStyle).map((key) => {
             return `${key}:${newStyle[key]}`;
         }).join(';');
+    }
+    @tracked('args', 'hover')
+    get style() {
+        return this.allStyles + ';background:' + (this.hover ? '#ff0' : dotStyle.background);
     }
     enter() {
        this.hover = true;

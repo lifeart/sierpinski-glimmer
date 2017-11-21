@@ -28,6 +28,9 @@ export default class SierpinskiGlimmer extends Component {
         this.seconds = (this.seconds % 10 ) + 1;
     }
 
+    onmouseenter() {
+        console.log(1212);
+    }
     public updateRender() {
         this.elapsed = new Date().getTime() - this.start;
         const t = (this.elapsed / 1000) % 10;
@@ -43,6 +46,6 @@ export default class SierpinskiGlimmer extends Component {
             this.updateRender();
             requestAnimationFrame(update);
         };
-        setTimeout(update);
+        requestAnimationFrame(update);
     }
 }

@@ -1,6 +1,7 @@
 import Component, { tracked } from '@glimmer/component';
 
 export default class SierpinskiTriangle extends Component {
+    private tagName = '';
     @tracked('args')
     get attrs() {
         let halfTarget = this.args.targetSize / 2;
@@ -15,8 +16,8 @@ export default class SierpinskiTriangle extends Component {
         } else {
             let s = this.args.s / 2;
             let halfS = s / 2;
-            
-            let slowDown = true;
+
+            let slowDown = false;
             if (slowDown) {
                 let e = performance.now() + 0.8;
                 while (performance.now() < e) {
