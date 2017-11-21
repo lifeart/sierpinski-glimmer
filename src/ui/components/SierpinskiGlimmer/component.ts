@@ -15,6 +15,7 @@ const styleLine =  Object.keys(containerStyle).map((key) => {
 }).join(';');
 
 export default class SierpinskiGlimmer extends Component {
+    private tagName = '';
     public targetSize = 25;
     public start = 0;
     public intervalID = null;
@@ -28,9 +29,6 @@ export default class SierpinskiGlimmer extends Component {
         this.seconds = (this.seconds % 10 ) + 1;
     }
 
-    onmouseenter() {
-        console.log(1212);
-    }
     public updateRender() {
         this.elapsed = new Date().getTime() - this.start;
         const t = (this.elapsed / 1000) % 10;
