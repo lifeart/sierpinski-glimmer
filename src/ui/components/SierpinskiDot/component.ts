@@ -4,7 +4,7 @@ const dotStyle = {
     'position': 'absolute',
     'background': '#61dafb',
     'font': 'normal 15px sans-serif',
-    'text-aglign': 'center',
+    'text-align': 'center',
     'cursor': 'pointer'
 };
 
@@ -26,7 +26,7 @@ export default class SierpinskiDot extends Component {
             'height': s + 'px',
             'left': (this.args.x) + 'px',
             'border-radius': (s / 2) + 'px',
-            'lineHeight': (s) + 'px',
+            'line-height': (s) + 'px',
             'background': this.hover ? '#ff0' : dotStyle.background
         };
         return Object.keys(newStyle).map((key) => {

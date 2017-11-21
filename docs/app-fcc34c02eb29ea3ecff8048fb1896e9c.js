@@ -808,8 +808,8 @@ if(this.registry.has(e))return e}}class Ii{constructor(t={}){this._entries=t}has
 if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(t,e,s,i)
 else for(var l=t.length-1;l>=0;l--)(r=t[l])&&(a=(n<3?r(a):n>3?r(e,s,a):r(e,s))||a)
 return n>3&&a&&Object.defineProperty(e,s,a),a}
-const zi={position:"absolute",background:"#61dafb",font:"normal 15px sans-serif","text-aglign":"center",cursor:"pointer"}
-class Vi extends Bt{constructor(){super(...arguments),this.hover=!1}get text(){return this.hover?"*"+this.args.text+"*":this.args.text}get style(){const t=1.3*this.args.size,e=Object.assign({},zi,{top:this.args.y+"px",width:t+"px",height:t+"px",left:this.args.x+"px","border-radius":t/2+"px",lineHeight:t+"px",background:this.hover?"#ff0":zi.background})
+const zi={position:"absolute",background:"#61dafb",font:"normal 15px sans-serif","text-align":"center",cursor:"pointer"}
+class Vi extends Bt{constructor(){super(...arguments),this.hover=!1}get text(){return this.hover?"*"+this.args.text+"*":this.args.text}get style(){const t=1.3*this.args.size,e=Object.assign({},zi,{top:this.args.y+"px",width:t+"px",height:t+"px",left:this.args.x+"px","border-radius":t/2+"px","line-height":t+"px",background:this.hover?"#ff0":zi.background})
 return Object.keys(e).map(t=>`${t}:${e[t]}`).join(";")}enter(){this.hover=!0}leave(){this.hover=!1}}ji([m],Vi.prototype,"hover",void 0),ji([m("args","hover")],Vi.prototype,"text",null),ji([m("args","hover")],Vi.prototype,"style",null)
 var Hi=function(t,e,s,i){var r,n=arguments.length,a=n<3?e:null===i?i=Object.getOwnPropertyDescriptor(e,s):i
 if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(t,e,s,i)
