@@ -1,0 +1,28 @@
+{{#if attrs.renderDot}}
+    <SierpinskiDot 
+        @x={{attrs.dotX}} 
+        @y={{attrs.dotY}} 
+        @size={{@targetSize}} 
+        @text={{@children}} />
+    {{else}}
+    <div>
+        <SierpinskiTriangle 
+            @x={{attrs.x1}} 
+            @y={{attrs.y1}} 
+            @s={{attrs.s}} 
+            @children={{@children}} 
+            @targetSize={{@targetSize}} />
+        <SierpinskiTriangle 
+            @x={{attrs.x2}} 
+            @y={{attrs.y2}} 
+            @s={{attrs.s}}  
+            @children={{@children}} 
+            @targetSize={{@targetSize}} />
+        <SierpinskiTriangle 
+            @x={{attrs.x3}} 
+            @y={{attrs.y3}} 
+            @s={{attrs.s}} 
+            @children={{@children}} 
+            @targetSize={{@targetSize}} />
+    </div>
+{{/if}}
