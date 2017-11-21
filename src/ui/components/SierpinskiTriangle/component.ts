@@ -7,19 +7,24 @@ export default class SierpinskiTriangle extends Component {
         let x =  this.args.x - halfTarget;
         let y =  this.args.y - halfTarget;
         let s =  this.args.s / 2;
-        let result =  {
-            dotX: x - halfTarget,
-            dotY: y - halfTarget,
-            s,
-            size: this.args.targetSize,
-            renderDot: this.args.s <= this.args.targetSize,
-            x1: x,
-            x2: x - s,
-            x3: x + s,
-            y1: y - (s / 2),
-            y2: y + (s / 2),
-            y3: y + (s / 2)
-        };
-        return result;
+        let renderDot =  this.args.s <= this.args.targetSize;
+        if (renderDot) {
+            return {
+                dotX: x - halfTarget,
+                dotY: y - halfTarget,
+                renderDot
+            };
+        } else {
+            return {
+                s,
+                renderDot,
+                x1: x,
+                x2: x - s,
+                x3: x + s,
+                y1: y - (s / 2),
+                y2: y + (s / 2),
+                y3: y + (s / 2)
+            };
+        }
     }
 }
