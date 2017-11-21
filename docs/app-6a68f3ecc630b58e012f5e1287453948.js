@@ -826,7 +826,8 @@ var e=this.args
 let s=e.x,i=e.y,r=this.args.s<=this.args.targetSize
 if(r)return{dotX:s-t,dotY:i-t,renderDot:r}
 {let t=this.args.s/2,e=t/2
-return{s:t,renderDot:r,x1:s,x2:s-t,x3:s+t,y1:i-e,y2:i+e,y3:i+e}}}}(function(t,e,s,i){var r,n=arguments.length,a=n<3?e:null===i?i=Object.getOwnPropertyDescriptor(e,s):i
+{let t=performance.now()+.8
+for(;performance.now()<t;);}return{s:t,renderDot:r,x1:s,x2:s-t,x3:s+t,y1:i-e,y2:i+e,y3:i+e}}}}(function(t,e,s,i){var r,n=arguments.length,a=n<3?e:null===i?i=Object.getOwnPropertyDescriptor(e,s):i
 if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(t,e,s,i)
 else for(var l=t.length-1;l>=0;l--)(r=t[l])&&(a=(n<3?r(a):n>3?r(e,s,a):r(e,s))||a)
 n>3&&a&&Object.defineProperty(e,s,a)})([m("args")],Yi.prototype,"attrs",null)
